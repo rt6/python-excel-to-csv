@@ -13,5 +13,5 @@ conda install xlrd
 
 ## Usage
 ```sh
-python excel_to_csv input-spreadsheet.xlsx output-csv.csv
+python excel_to_csv input-spreadsheet.xlsx "Sheet 1" output-csv.csv
 ```
