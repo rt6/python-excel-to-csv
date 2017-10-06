@@ -1,0 +1,19 @@
+import xlrd
+import csv
+import sys
+
+
+
+def excel_to_csv(inExcel, infile_sheetname, outCSV):
+
+   wb = xlrd.open_workbook(inExcel)
+   sh = wb.sheet_by_name(infile_sheetname)
+   your_csv_file = open(outCSV, 'wb')
+   wr = csv.writer(your_csv_file, quoting=csv.QUOTE_ALL)
+   for rownum in xrange(sh.nrows):
+      wr.writerow(sh.row_values(rownum))
+   your_csv_file.close()
+    
+    
+excel_to_csv(sys.argv[1], sys.arv[2], sys.argv[3])
+    
